@@ -1,9 +1,15 @@
-import { useRef } from "react";
+import { useRef,useEffect } from "react";
 import PropTypes from "prop-types";
 
 const Navbar = ({navOpen}) => {
  const lastActiveLink = useRef();
  const activeBox =useRef();
+
+//  const initActiveBox = useRef()=>{
+//   con
+//  }
+//  useEffect(initActiveBox,[])
+
     const navItems = [
         {
           label: 'Home',
@@ -33,7 +39,7 @@ const Navbar = ({navOpen}) => {
         }
       ];
     return (
-        <nav className={'navbar' + navOpen ? 'active' : ''}>
+        <nav className={'navbar' + (navOpen ? 'active' : '')}>
         {
             navItems.map(({ label, link, className, ref }, key) => (
                 <a 
